@@ -1,1 +1,1 @@
-Portfolio site of my favorite photographer Sebastiao Salgado 
+Portfolio site of Rachit Khandelwal
