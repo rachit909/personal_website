@@ -26,15 +26,17 @@
     margin-top: 1.5rem;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 /* portfolio */
 
 #portfolio{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/work-pic.jpg') center/cover no-repeat fixed;
     color: var(--light-color);
-    justify-content: center;
-    margin:auto;
-}
-.container{
     justify-content: center;
     margin:auto;
 }
@@ -134,7 +136,6 @@
 #projects{
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/projects-pic.jpg') center/cover no-repeat fixed;
     /* min-height: 65vh; */
-    display: flex;
 }
 #projects .title h2{
     color: var(--light-color);
@@ -152,6 +153,7 @@
 .projects-content{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 .proj {
     /* background-color: #4a3728; */
