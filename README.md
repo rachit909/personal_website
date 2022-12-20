@@ -1,1 +1,1 @@
-# personal_website
+Portfolio site of my favorite photographer Sebastiao Salgado 

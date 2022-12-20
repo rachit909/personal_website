@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Rachit Khandelwal</title>
+    <link rel="stylesheet" type="text/css" href="css/html5reset.css">
+    <link rel = "stylesheet" href = "css/home.css">
+    <script src="https://kit.fontawesome.com/c6aaba7677.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="skip"><a href="index.html#contact">Skip to Main Content</a></div>
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <!-- <img src = "images/RachitMain.JPG" alt="A portrait of Rachit Khandelwal"> -->
+            <p>Rachit Khandelwal</p>
+          </div>
+          <ul class="menu-list">
+            <div class="icon2 cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li class="currentNav1"><a href="index.html">Home</a></li>
+            <li class="currentNav1"><a href="index.html#contact">Contact</a></li>
+            <li><a href="about.html#about">About</a></li>
+            <li><a href="examples.html#resume">Resume</a></li>
+          </ul>
+          <div class="icon2 menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+       
+
+      </nav>
+
+    <!-- header -->
+    <header id = "header" class = "vh-100 flex">
+        <div class = "container">
+            <div class = "header-content">
+                <h1>Welcome to my <br><span class = "typewrite" data-loop = "yes" data-speed = "100" data-delay = "2000" data-words = '["life", "portfolio", "website"]'></span></h1>
+                <h2>Rachit Khandelwal</h2>
+
+    </header>
+    <!-- end of header -->
+
+    <!-- main content -->
+    <main>
+       
+        <!-- contact section -->
+        <section id = "contact" class = "py-7">
+            <div class = "container">
+                <div class = "contact-content flex">
+                    <div class = "contact-left">
+                        <div class="title">
+                            <h2>Get In Touch!</h2>
+                        </div>
+                        <p class = "lead"><i class = "fas fa-phone-alt"></i> +1 732-810-9978</p>
+                        <p class = "lead"><i class = "fas fa-envelope"></i> krachit@umich.edu</p>
+                        <p class = "lead"><i class="fa-brands fa-linkedin"></i> rachitkhandelwal09</p>
+                        <form class="kwes-form" action="https://kwesforms.com/api/foreign/forms/ZznWd8kxsjE9ye9SE4F0">
+                          <label for="name">Name</label><br>
+                          <input id="name" type = "text" name="name" class = "form-control" rules="required|max:255" placeholder="Your name herer">
+                          <label for="email">Email</label><br>
+                            <input id ="email" type = "email" name ="email" class = "form-control" rules="required|max:255" placeholder="Your email here">
+                            <button type = "submit" name="submit" class = "btn-submit btn">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class = "contact-right">
+                        <img src = "images/contact.jpg" alt = "contact image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end of contact section -->
+
+      
+    </main>
+    <!-- end of main content -->
+
+    <!-- footer -->
+    <footer id = "footer" class = "py-7">
+        <div class = "container">
+            <div class = "footer-content">
+                <div>
+                    <h3>RACHIT KHANDELWAL</h3>
+                    <div><img src = "images/RachitMain.JPG" alt="A portrait of Rachit Khandelwal"></div>
+                </div>
+
+                <div>
+                    <h3>Links</h3>
+                    <ul class = "flex">
+                        <li><a href = "index.html#header">Home</a></li>
+                        <li><a href = "index.html#contact">Contact</a></li>
+                        <li><a href = "about.html#about">About</a></li>
+                        <li><a href = "examples.html#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer -->
+
+
+    <!-- typewriting js -->
+    <script src = "typewriting-master/typewriting.js"></script>
+
+
+    <!-- banner script-->
+    <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          navbar.classList.add("show");
+          menuBtn.classList.add("hide");
+          body.classList.add("disabled");
+        }
+        cancelBtn.onclick = ()=>{
+          body.classList.remove("disabled");
+          navbar.classList.remove("show");
+          menuBtn.classList.remove("hide");
+        }
+        window.onscroll = ()=>{
+          this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+        }
+      </script>
+      <script src="https://kwesforms.com/v2/kwes-script.js" defer></script>
+
+</body>
+</html>
