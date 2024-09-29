@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rachit Khandelwal - Futuristic Portfolio</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Gradient from black to a darker futuristic shade of blue */
+            background: linear-gradient(180deg, #000000 0%, #000000 70%, #001f33 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgb(94, 234, 212);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: rgb(94, 234, 212);
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('images/background.JPG') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgb(94, 234, 212);
+            text-transform: uppercase;
+            animation: fadeInDown 1s;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .typewrite span {
+            border-right: 0.08em solid #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid rgb(94, 234, 212);
+            color: rgb(94, 234, 212);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background: rgb(94, 234, 212);
+            color: #000;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections with Flashlight Effect */
+        section {
+            padding: 100px 50px;
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+            --x: 50%;
+            --y: 50%;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.1), transparent 50%);
+            pointer-events: none;
+            transition: background 0.2s;
+            opacity: 0;
+        }
+
+        section:hover::before {
+            opacity: 1;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: rgb(94, 234, 212);
+        }
+
+        /* Contact Section Styles */
+        .contact-content {
+            display: flex;
+            flex-direction: row;
+            align-items:center;
+        }
+
+        .contact-left, .contact-right {
+            width: 50%;
+        }
+
+        .contact-left {
+            padding: 3rem;
+        }
+
+        .contact-left .lead {
+            padding: 0.5rem;
+        }
+
+        .contact-left form {
+            margin-top: 3rem;
+        }
+
+        .contact-left form .form-control {
+            display: block;
+            margin: 1.6rem 0;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 1rem;
+            width: 100%;
+            background-color: #fff;
+            color: #000;
+        }
+
+        .contact-left form .form-control::placeholder {
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            color: #888;
+        }
+
+        .contact-left .btn-submit {
+            padding: 1.4rem 3rem;
+            font-family: 'Poppins', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.6rem;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-left .btn-submit:hover {
+            background-color: #333;
+        }
+
+        .contact-right img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .work-card, .project-card {
+                width: 100%;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .contact-left, .contact-right {
+                width: 100%;
+            }
+
+            .contact-left {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <h1>Rachit Khandelwal</h1>
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="examples.html#resume">Resume</a></li>
+              <li><a href="examples.html#work-experience">Experience</a></li>
+              <li><a href="examples.html#projects">Projects</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+          <h2>Welcome to my <br><span class="typewrite" data-words='["life", "portfolio", "website"]'></span></h2>
+          <h2>Rachit Khandelwal</h2>
+          <a href="examples.html#work-experience" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-7">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Left Side (Form) -->
+                <div class="contact-left">
+                    <div class="title">
+                        <h2>Get In Touch!</h2>
+                    </div>
+                    <p class="lead"><i class="fas fa-phone-alt"></i> +1 732-810-9978</p>
+                    <p class="lead"><i class="fas fa-envelope"></i> krachit@umich.edu</p>
+                    <p class="lead"><i class="fab fa-linkedin"></i> rachitkhandelwal09</p>
+                    <form class="kwes-form" action="https://kwesforms.com/api/foreign/forms/PDLxCmYgqwb64bIsNhVr">
+                        <label for="name">Name</label><br>
+                        <input id="name" type="text" name="name" class="form-control" rules="required|max:255" placeholder="Your name here">
+                        <label for="email">Email</label><br>
+                        <input id="email" type="email" name="email" class="form-control" rules="required|email|max:255" placeholder="Your email here">
+                        <label for="message">Message</label><br>
+                        <textarea id="message" name="message" class="form-control" rules="required|max:1000" placeholder="Your message here"></textarea>
+                        <button type="submit" name="submit" class="btn-submit btn">Submit</button>
+                    </form>
+                </div>
+                <!-- Right Side (Image) -->
+                <div class="contact-right">
+                    <img src="images/contact.jpg" alt="Contact Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Include Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/c6aaba7677.js" crossorigin="anonymous"></script>
+
+    <!-- Include KwesForms Script -->
+    <script src="https://kwesforms.com/v2/kwes-script.js"></script>
+
+    <!-- Typewriting Effect Script -->
+    <script>
+        // Typewriting effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if(this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 200;
+
+                if(this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if(!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if(this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        // Init On DOM Load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Init App
+        function init() {
+            const txtElement = document.querySelector('.typewrite');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-delay') || 3000;
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+
+    <script>
+        // Smooth scrolling effect
+        const links = document.querySelectorAll('nav ul li a');
+
+        for (const link of links) {
+            link.addEventListener('click', smoothScroll);
+        }
+
+        function smoothScroll(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else {
+                window.location.href = href;
+            }
+        }
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            let offset = window.pageYOffset;
+            hero.style.backgroundPositionY = offset * 0.7 + 'px';
+        });
+
+        // Flashlight effect
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            section.addEventListener('mousemove', function(e) {
+                const rect = section.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                section.style.setProperty('--x', x + 'px');
+                section.style.setProperty('--y', y + 'px');
+            });
+        });
+    </script>
+</body>
+</html>

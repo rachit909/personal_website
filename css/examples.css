@@ -1,0 +1,219 @@
+/* header */
+#header{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/background.JPG') center/cover no-repeat fixed;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+#header .container{
+    width: 100%;
+}
+.header-content{
+    padding-bottom: 4rem;
+}
+.header-content h1{
+    font-size: 80px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    color: var(--light-color);
+}
+
+.header-content h2{
+    font-size: 30px;
+    color: var(--light-color);
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* portfolio */
+
+#portfolio{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/work-pic.jpg') center/cover no-repeat fixed;
+    color: var(--light-color);
+    justify-content: center;
+    margin:auto;
+    background-color: #161748;
+}
+
+.title h2{
+    color: white;
+}
+.portfolio-grid{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.portfolio-grid > div{
+    transition: var(--transition);
+}
+.portfolio-grid > div:hover{
+    transform: scale(0.9);
+}
+.portfolio-grid{
+    grid-template-columns: 1fr;
+    justify-content: center;
+}
+.portfolio-grid > div{
+    width: 75%;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+    align-self: center;
+}
+.portfolio-grid > div img{
+    /* width: 100%; */
+    max-width: 50%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin:auto;
+}
+.work {
+    /* background-color: #4a3728; */
+    outline-width: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+}
+.work h2{
+    font-size: 20px;
+    margin-top: 20px;
+    color: black;
+}
+
+.work h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-top: -15px;
+    margin-bottom: -5px;
+}
+
+.work>img {
+    height: auto;
+}
+
+.work p {
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+/* .work {
+    display: grid;
+    text-indent: 4%;
+    font-weight: lighter;
+    font-size: 40px;
+    color: black;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+} */
+.techs{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.techs p {
+    background-color: thistle;
+    border-radius: 15px;
+    margin: 10px;
+    font-size: 100px;
+    padding: 10px;
+    flex-shrink: 1;
+    color: black;
+    font-weight: bold;
+}
+
+#projects{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('../images/projects-pic.jpg') center/cover no-repeat fixed;
+    /* min-height: 65vh; */
+}
+#projects .title h2{
+    color: var(--light-color);
+}
+#projects .title h2::after{
+    background-color: var(--light-color);
+}
+.projects-grid > div{
+    width: 400px;
+    transition: var(--transition);
+}
+.projects-grid > div:hover{
+    transform: scale(0.9);
+}
+.projects-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.proj {
+    /* background-color: #4a3728; */
+    outline-width: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    width: 100%;
+}
+.py-7{
+    padding: 7rem 0;
+}
+.proj h2{
+    font-size: 30px;
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+}
+.proj>img {
+    height: auto;
+}
+
+.proj p {
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+.title h2, .resume_title h2{
+    font-size: 4rem;
+}
+.work {
+    display: grid;
+    font-weight: lighter;
+    font-size: 40px;
+    color: black;
+    width: 100%;
+    border: 1px solid rgba(43, 105, 251, 0.12);
+    box-shadow: rgba(43, 105, 251, 0.06) 0px 0px 1rem 1rem;
+    background-color: ;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.techs{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.techs p {
+    background-color: thistle;
+    border-radius: 15px;
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px;
+    flex-shrink: 1;
+    color: black;
+    font-weight: bold;
+}

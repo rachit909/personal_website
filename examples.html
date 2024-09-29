@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rachit Khandelwal - Futuristic Portfolio</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Gradient from black to a darker futuristic shade of blue */
+            background: linear-gradient(180deg, #000000 0%, #000000 70%, #001f33 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgb(94 234 212);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: rgb(94 234 212);
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('images/background.JPG') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgb(94 234 212);
+            text-transform: uppercase;
+            animation: fadeInDown 1s;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .typewrite span {
+            border-right: 0.08em solid #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 2px solid rgb(94 234 212);
+            color: rgb(94 234 212);
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background: #00ccff;
+            color: #000;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Sections with Flashlight Effect */
+        section {
+            padding: 100px 50px;
+            position: relative;
+            background: transparent;
+            overflow: hidden;
+            --x: 50%;
+            --y: 50%;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--x) var(--y), rgba(255,255,255,0.1), transparent 50%);
+            pointer-events: none;
+            transition: background 0.2s;
+            opacity: 0;
+        }
+
+        section:hover::before {
+            opacity: 1;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: rgb(94 234 212);
+        }
+
+        .resume {
+            text-align: center;
+        }
+
+        .resume object {
+            width: 100%;
+            height: 800px;
+            border: none;
+        }
+
+        .work-experience, .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .work-card, .project-card {
+            background: rgba(0, 31, 51, 0.9); /* Semi-transparent dark blue */
+            margin: 20px;
+            padding: 20px;
+            width: 350px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .work-card:hover, .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .work-card img, .project-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .work-card h3, .project-card h3 {
+            margin: 15px 0;
+            color: rgb(94 234 212);
+        }
+
+        .work-card h4, .project-card h4 {
+            margin-bottom: 10px;
+            color: #fff;
+            font-weight: normal;
+        }
+
+        .work-card p, .project-card p {
+            color: #ccc;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .techs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .techs p {
+            background: rgb(94 234 212);
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 12px;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .work-card, .project-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rachit Khandelwal</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#work-experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2>My Past Work Is <br><span class="typewrite" data-words='["Creative", "Proficient", "Dynamic"]'></span></h2>
+            <p>I'm a developer with a passion for creating futuristic web experiences.</p>
+            <a href="#work-experience" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <div class="resume">
+            <object data="Rachit_Khandelwal_Resume_2024.pdf" type="application/pdf">
+                <p>Your browser does not support PDFs. Please download the PDF to view it: <a href="Rachit_Khandelwal_Resume_2024.pdf">Download PDF</a>.</p>
+            </object>
+        </div>
+    </section>
+
+    <section id="work-experience">
+        <h2>Work Experience</h2>
+            <!-- PayPal -->
+            <div class="work-experience">
+              <div class="work-card">
+                <img src="images/paypal.jpg" alt="PayPal">
+                <h3>PayPal</h3>
+                <h4>Software Engineering Intern</h4>
+                <p><i class="fa-solid fa-chevron-right"></i> Orchestrated the technical merge of developer documentation tooling with several new features, such as language-agnostic
+                  server-side SDKs for over 8 languages and an AI code copilot, increasing downloads in the updated portal by over 160%.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Developed a Jenkins pipeline to deploy API specifications from over 10 internal orgs through APImatic's Cloud API,
+                  deploying updates directly to CDN and webserver, enhancing deployment speed by 50% and reducing downtime by 30%.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Engineered a robust front-end portal utilizing React for dynamic rendering and GraphQL for efficient data fetching, tested
+                  using Cypress and Mocha with A/B testing by over 1,200 active users, resulting in a 25% uplift in daily user engagement</p>
+                <div class="techs">
+                  <p>Java</p>
+                  <p>JavaScript</p>
+                  <p>Node.js</p>
+                  <p>React</p>
+                  <p>GraphQL</p>
+                  <p>APImatic</p>
+                  <p>Jenkins</p>
+                  <p>CDN</p>
+                  <p>Cypress</p>
+                  <p>Mocha</p>
+                  <p>A/B Testing</p>
+                  <p>Docker</p>
+                  <p>Kubernetes</p>
+                </div>
+            </div>
+            <!-- Ford -->
+            <div class="work-card">
+              <img src="images/ford.jpg" alt="Ford">
+              <h3>Ford</h3>
+              <h4>Software Engineering Intern</h4>
+              <p><i class="fa-solid fa-chevron-right"></i> Migrated 5 broadcast and communication microservices from Pivotal Cloud Foundry redis cache to Google Cloud Platform,
+                improving scalability and leveraging real-time cloud-native services for enhanced performance and reliability.</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Communicated with over 10 databases, utilizing RabbitMQ for seamless database amendment requests, for over 200,000
+                orders, performing conclusive validation on each, resulting in improved data integrity and increased speeds of up to 2x.</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Modernized SOAP-based software architecture to RESTful API microservices, adding authentication security, Jacoco and
+                Cucumber testing, and utilizing modern frameworks like Springboot, resulting in improved system performance by 40%.</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Leveraged CI/CD Tekton pipeline for seamless deployment to preprod environments, ensuring efficient software delivery
+                and integrating 42Crunch into development workflow for comprehensive security assessments and reliability.</p>
+              <div class="techs">
+                <p>Java</p>
+                <p>Spring Boot</p>
+                <p>Pivotal Cloud Foundry</p>
+                <p>Google Cloud Platform</p>
+                <p>Redis Cache</p>
+                <p>RabbitMQ</p>
+                <p>SOAP architecture</p>
+                <p>RESTful API</p>
+                <p>Jacoco</p>
+                <p>Cucumber</p>
+                <p>Terraform/Tekton</p>
+                <p>42Crunch</p>
+              </div>
+          </div>
+            <!-- Cantoo -->
+            <div class="work-card">
+                <img src="images/cantoo.jpeg" alt="Cantoo">
+                <h3>Cantoo</h3>
+                <h4>ML/AI Intern</h4>
+                <p><i class="fa-solid fa-chevron-right"></i> Built back-end software for real-time behavioral interview analysis, incorporating facial emotion tracking and sentiment
+                  analysis using the Facial Expression Recognizer library and DeepGram API.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Optimized user-facing video processing delays by 80% through techniques such as down-sampling and frame- skipping,
+                  while rendering content dynamically through client-side multithreading, leading to a 50% reduction in loading times.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Integrated facial expression recognition and speech-to-text conversion into the web app, enabling over a 1,000 monthly
+                  active users to receive instant feedback on expressions and analyze speech content for improved interview preparation.</p>
+                <div class="techs">
+                    <p>Python</p>
+                    <p>Facial Expression Recognizer</p>
+                    <p>Deepgram API</p>
+                    <p>SpaCy (NLP)</p>
+                    <p>JavaScript</p>
+                    <p>Client-side Multithreading</p>
+                    <p>Speech-to-Text</p>
+                </div>
+            </div>
+            <!-- Code Ninjas -->
+            <div class="work-card">
+                <img src="images/CodeNinjas.jpg" alt="Code Ninjas">
+                <h3>Code Ninjas</h3>
+                <h4>Software Development Intern</h4>
+                <p><i class="fa-solid fa-chevron-right"></i> Collaborated with a team to identify and alleviate software bottlenecks, improving application responsiveness by 5x.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Created over 200 mini-projects using a market-focused approach to streamline development.</p>
+                <div class="techs">
+                    <p>Java</p>
+                    <p>C#</p>
+                    <p>Unity</p>
+                    <p>Wwise</p>
+                    <p>Microsoft Azure</p>
+                    <p>JavaScript</p>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                </div>
+            </div>
+            <!-- Stagóna -->
+            <div class="work-card">
+                <img src="images/launchx.jpg" alt="Stagóna">
+                <h3>Stagóna</h3>
+                <h4>Product Management Intern</h4>
+                <p><i class="fa-solid fa-chevron-right"></i> Directed the entire product lifecycle from ideation to support, including material design and hardware integration.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Partnered with non-profits to provide a smart device for water filtration and usage monitoring on iOS and Android.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Collaborated with engineers using CAD for design components, facilitating testing for over 2000 users.</p>
+                <div class="techs">
+                    <p>Python</p>
+                    <p>Swift</p>
+                    <p>Kotlin</p>
+                    <p>CAD</p>
+                    <p>Flow Rate Sensor</p>
+                    <p>Bluetooth</p>
+                    <p>Arduino Uno</p>
+                    <p>AWS</p>
+                    <p>JavaScript</p>
+                    <p>HTML</p>
+                    <p>CSS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+          <div class="projects">
+            <div class="project-card">
+              <!-- <img src="images/Solestride.png" alt="Solestride"> -->
+              <h3>SoleFinder</h3>
+              <p><i class="fa-solid fa-chevron-right"></i> Implemented the backend system to generate, store, and retrieve efficient routes for 65 athletes on the University of Michigan Track Team with five other developers.</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Interacted with Google Maps API to consume routes and location data, transported data between frontend/backend via JSON, placed data in persistent storage (Firebase).</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Developed API endpoints usable across iOS and Android platforms to enhance training plans by allowing athletes to analyze their routes and performance.</p>
+              <!-- <div class="techs">
+                  <p>Python</p>
+                  <p>React Native</p>
+                  <p>Google Maps API</p>
+                  <p>Node.js</p>
+                  <p>Firebase</p>
+                  <p>JavaScript</p>
+                  <p>HTML</p>
+                  <p>CSS</p>
+              </div> -->
+          </div>
+          <div class="project-card">
+            <h3>InstaClone</h3>
+            <p><i class="fa-solid fa-chevron-right"></i> Designed full-stack social media web app for shortform video and launched beta with A/B testing on over 20 users</p>
+            <p><i class="fa-solid fa-chevron-right"></i> Engineered a RESTful API with robust security measures, including user authentication, data encryption, and
+              protection against common web vulnerabilities, while using client-side dynamic pages</p>
+            <!-- <div class="techs">
+                <p>Python</p>
+                <p>React Native</p>
+                <p>Google Maps API</p>
+                <p>Node.js</p>
+                <p>Firebase</p>
+                <p>JavaScript</p>
+                <p>HTML</p>
+                <p>CSS</p>
+            </div> -->
+            </div>
+            <div class="project-card">
+              <h3>AI/ML Strategy Developer, Operator ICT, Prague</h3>
+              <p><i class="fa-solid fa-chevron-right"></i> Formulated ML strategy aimed at enhancing urban green spaces across Prague utilizing Scikit-Learn, TensorFlow to
+                analyze environmental data and identify optimal locations for green space development.</p>
+              <p><i class="fa-solid fa-chevron-right"></i> Integrated complex datasets on air quality, precipitation, and vegetation from active city sensors to create models that
+                forecast the environmental impact of potential green projects.</p>
+              <!-- <div class="techs">
+                  <p>Python</p>
+                  <p>React Native</p>
+                  <p>Google Maps API</p>
+                  <p>Node.js</p>
+                  <p>Firebase</p>
+                  <p>JavaScript</p>
+                  <p>HTML</p>
+                  <p>CSS</p>
+              </div> -->
+          </div>
+
+            <!-- SillyQL -->
+            <div class="project-card">
+                <h3>SillyQL</h3>
+                <p><i class="fa-solid fa-chevron-right"></i> Implemented a relational database with SQL syntax using C++, without STL data structures.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Supported operations like CREATE, INSERT, JOIN, REMOVE, PRINT, and GENERATE INDEX.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Explored hash tables through the generate index function.</p>
+            </div>
+            <!-- Office Hours Queue -->
+            <div class="project-card">
+                <h3>Office Hours Queue</h3>
+                <p><i class="fa-solid fa-chevron-right"></i> Built a web-based office hours queue used at the University of Michigan.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Created a dynamic backend with linked lists and iterators to process API requests.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Enabled professors and TAs to assist students effectively with programming assignments.</p>
+            </div>
+            <!-- Weather Forecast App -->
+            <div class="project-card">
+                <h3>Weather Forecast App</h3>
+                <p><i class="fa-solid fa-chevron-right"></i> Developed a weather app using data from OpenWeather API.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Focused on delivering information in a clean, modern interface.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Conducted extensive user interviews to refine design and features.</p>
+            </div>
+            <!-- Machine Learning with Piazza -->
+            <div class="project-card">
+                <h3>Machine Learning with Piazza</h3>
+                <p><i class="fa-solid fa-chevron-right"></i> Created a classifier using the NLP Bag of Words model.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Determined thread or subject-matter of posts on Piazza.</p>
+                <p><i class="fa-solid fa-chevron-right"></i> Implemented a simplified version of the Multivariate Bernoulli Naive Bayes Classifier.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto; color: #ccc;">
+            Feel free to reach out to me via email at <a href="krachit@umich.edu" style="color: #00ccff;">krachit@umich.edu</a> or follow me on social media.
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Rachit Khandelwal. All rights reserved.</p>
+    </footer>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/c6aaba7677.js" crossorigin="anonymous"></script>
+
+    <!-- Typewriting Effect Script -->
+    <script>
+        // Typewriting effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if(this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 200;
+
+                if(this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if(!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if(this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        // Init On DOM Load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Init App
+        function init() {
+            const txtElement = document.querySelector('.typewrite');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-delay');
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+
+    <script>
+        // Smooth scrolling effect
+        const links = document.querySelectorAll('nav ul li a');
+
+        for (const link of links) {
+            link.addEventListener('click', smoothScroll);
+        }
+
+        function smoothScroll(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          if (href.startsWith('#')) {
+              document.querySelector(href).scrollIntoView({
+                  behavior: 'smooth'
+              });
+          } else {
+              window.location.href = href;
+          }
+      }
+
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const hero = document.querySelector('.hero');
+            let offset = window.pageYOffset;
+            hero.style.backgroundPositionY = offset * 0.7 + 'px';
+        });
+
+        // Flashlight effect
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            section.addEventListener('mousemove', function(e) {
+                const rect = section.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                section.style.setProperty('--x', x + 'px');
+                section.style.setProperty('--y', y + 'px');
+            });
+        });
+    </script>
+</body>
+</html>

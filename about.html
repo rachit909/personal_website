@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rachit Khandelwal - About</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Gradient background */
+            background: linear-gradient(180deg, #000000 0%, #000000 70%, #001f33 100%);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgb(94, 234, 212);
+        }
+
+        nav ul {
+            display: flex;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: rgb(94, 234, 212);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('images/background.JPG') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+            position: relative;
+            text-align: center;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: rgb(94, 234, 212);
+            text-transform: uppercase;
+            animation: fadeInDown 1s;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s;
+        }
+
+        .typewrite span {
+            border-right: 0.08em solid #fff;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 50px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background: transparent;
+        }
+
+        .about-left, .about-right {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-left img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .about-right {
+            padding: 0 20px;
+        }
+
+        .about-right h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgb(94, 234, 212);
+        }
+
+        .about-right p {
+            color: #ccc;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px 50px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .hero-content h2 {
+                font-size: 32px;
+            }
+
+            #about {
+                flex-direction: column;
+                padding: 50px 20px;
+            }
+        }
+    </style>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/c6aaba7677.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Skip Link -->
+    <div class="skip"><a href="#about">Skip to Main Content</a></div>
+
+    <header>
+        <h1>Rachit Khandelwal</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="examples.html#resume">Resume</a></li>
+                <li><a href="examples.html#work-experience">Experience</a></li>
+                <li><a href="examples.html#projects">Projects</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h2><span class="typewrite" data-words='["A Developer", "An Innovator", "A Fast Learner"]'></span></h2>
+            <h2>Rachit Khandelwal</h2>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-left">
+            <img src="images/RachitMain.JPG" alt="Picture of Rachit Khandelwal">
+        </div>
+        <div class="about-right">
+            <h2>About Rachit</h2>
+            <p>Hello! I'm Rachit, a Software Engineer who's experienced in taking fullstack applications from scratch to production. I studied at the University of Michigan-Ann Arbor as a Computer Science and Mathematics major, taking part in various extracurricular activities.</p>
+            <p>Over the last 4 years, I've had the opportunity to develop for a handful of amazing companies/clients continue to do so today. My work includes creating backend servers, integrating cloud technologies, developing web apps, creating dynamic frontend interfaces, handling small-scale DevOps, and implementing desktop apps.</p>
+            <p>You can check out my recent projects, experiences, and passions on the Resume, Experience, or Projects tab throughout my personal portfolio. If you have any questions, do not refrain from contacting me!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Rachit Khandelwal. All rights reserved.</p>
+    </footer>
+
+    <!-- Typewriting Effect Script -->
+    <script>
+        // Typewriting effect
+        class TypeWriter {
+            constructor(txtElement, words, wait = 3000) {
+                this.txtElement = txtElement;
+                this.words = words;
+                this.txt = '';
+                this.wordIndex = 0;
+                this.wait = parseInt(wait, 10);
+                this.type();
+                this.isDeleting = false;
+            }
+
+            type() {
+                const current = this.wordIndex % this.words.length;
+                const fullTxt = this.words[current];
+
+                if (this.isDeleting) {
+                    this.txt = fullTxt.substring(0, this.txt.length - 1);
+                } else {
+                    this.txt = fullTxt.substring(0, this.txt.length + 1);
+                }
+
+                this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+                let typeSpeed = 200;
+
+                if (this.isDeleting) {
+                    typeSpeed /= 2;
+                }
+
+                if (!this.isDeleting && this.txt === fullTxt) {
+                    typeSpeed = this.wait;
+                    this.isDeleting = true;
+                } else if (this.isDeleting && this.txt === '') {
+                    this.isDeleting = false;
+                    this.wordIndex++;
+                    typeSpeed = 500;
+                }
+
+                setTimeout(() => this.type(), typeSpeed);
+            }
+        }
+
+        // Init On DOM Load
+        document.addEventListener('DOMContentLoaded', init);
+
+        // Init App
+        function init() {
+            const txtElement = document.querySelector('.typewrite');
+            const words = JSON.parse(txtElement.getAttribute('data-words'));
+            const wait = txtElement.getAttribute('data-delay') || 3000;
+            new TypeWriter(txtElement, words, wait);
+        }
+    </script>
+
+    <script>
+        // Smooth scrolling effect
+        const links = document.querySelectorAll('nav ul li a');
+
+        for (const link of links) {
+            link.addEventListener('click', smoothScroll);
+        }
+
+        function smoothScroll(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            } else {
+                window.location.href = href;
+            }
+        }
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function () {
+            const hero = document.querySelector('.hero');
+            let offset = window.pageYOffset;
+            hero.style.backgroundPositionY = offset * 0.7 + 'px';
+        });
+
+        // Flashlight effect
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            section.addEventListener('mousemove', function (e) {
+                const rect = section.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                section.style.setProperty('--x', x + 'px');
+                section.style.setProperty('--y', y + 'px');
+            });
+        });
+    </script>
+</body>
+</html>
